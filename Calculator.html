@@ -1,0 +1,121 @@
+<html>
+<head>
+<title>Student Result Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body><header>
+<h1>Student Result Calculator</h1>
+<div class="nav">
+    <div><a href="Home.html">Home</a></div>
+    <div><a href="Calculator.html">Calculator</a></div>
+    <div><a href="About.html">About</a></div>
+</div>
+<hr>
+<p>Calculate Your Marks | Know Your Percentage | Ger Your Grade</p><br><br>
+</header>
+<form>
+<fieldset>
+    <legend>Enter Your Details </legend>
+<label >Student Name </label><br>
+<input type="text" placeholder="Enter your Name" id="name" required><br>
+<label >Enrollment No.  </label><br>
+<input type="text" placeholder="Enter your Enrollment no." id="enroll" required><br>
+<label >Gender</label><br>
+<input type="radio" name="gender " value="Male">Male 
+<input type="radio" name="gender " value="Female">Female <br>
+<label >Date of Birth</label><br>
+<input type="date" value="2007-01-01" id="date" ><br>
+<label>Course/Class</label><br>
+<input type="text" placeholder="Enter Course/Class" id="course" required><br>
+</fieldset>
+<fieldset>
+<legend>Enter Marks</legend>
+<table>
+    <tr>
+        <th>S NO.</th>
+        <th>Subject</th>
+        <th>Max Marks</th>
+        <th>Obtained Marks</th>
+    </tr>
+    <tr>
+        <td>1.</td>
+        <td>Mathematics</td>
+        <td>100</td>
+        <td><input type="number" id="math" required></td>
+    </tr>
+
+    <tr>
+        <td>2.</td>
+        <td>Physics</td>
+        <td>100</td>
+        <td><input type="number" id="physics" required></td>
+    </tr>
+    <tr>
+        <td>3.</td>
+        <td>Chemistry</td>
+        <td>100</td>
+        <td><input type="number" id="chemistry" required></td>
+    </tr>
+    <tr>
+        <td>4.</td>
+        <td>Hindi</td>
+        <td>100</td>
+        <td><input type="number" id="hindi" required></td>
+    </tr>
+    <tr>
+        <td>5.</td>
+        <td>English</td>
+        <td>100</td>
+        <td><input type="number" id="english" required></td>
+    </tr>
+</table>
+</fieldset>
+<input type="submit" value="Calculate Result" onclick="result()">
+<input type="reset" value="Reset">
+
+
+
+</fieldset>
+</form>
+<script>
+    function result(){
+    let m1 = Number(document.getElementById("math").value);
+    let m2 = Number(document.getElementById("physics").value);
+    let m3 = Number(document.getElementById("chemistry").value);
+    let m4 = Number(document.getElementById("hindi").value);
+    let m5 = Number(document.getElementById("english").value);
+
+    let total = m1 + m2 + m3 + m4 + m5;
+
+    let percentage = (total / 500) * 100;
+
+    let grade;
+    if (percentage >= 60) {
+        grade = "A";
+    } else if (percentage >= 50) {
+        grade = "B";
+    } else if (percentage >= 40) {
+        grade = "C";
+    } else {
+        grade = "F (Fail)";
+    }
+    let name=document.getElementById("name").value;
+    let enrol=document.getElementById("enroll").value;
+    let date=document.getElementById("date").value;
+    let course=document.getElementById("course").value;
+        document.write("<center>RESULT SAMMARY<br><br>")
+    
+        document.write("Student Name :"+name+"<br>")
+        document.write("Enrollment No. :"+enrol+"<br>")
+        document.write("Date of birth :"+date+"<br><br>")
+        document.write("<table border='1px';><tr><th>S NO.</th><th>Subject</th><th>Max Marks</th><th>Obtained Marks</th></tr><tr><td>1.</td><td>Mathematics</td><td>100</td><td>"+m1+"</td></tr><tr><td>2.</td><td>Physics</td><td>100</td><td>"+m2+"</td></tr><tr><td>3.</td><td>Chemistry</td><td>100</td><td>"+m3+"</td></tr><tr><td>4.</td><td>Hindi</td><td>100</td><td>"+m4+"</td></tr><tr><td>5.</td><td>English</td><td>100</td><td>"+m5+"</td></tr><table><br><br>")
+
+
+        document.write("TOTAL MARKS :"+total+"<br>");
+        document.write("PERSENTAGE :"+percentage+"<br>");
+        document.write("GRADE :"+grade+"<br><center>");
+    }
+</script>
+
+</body>
+</html>
